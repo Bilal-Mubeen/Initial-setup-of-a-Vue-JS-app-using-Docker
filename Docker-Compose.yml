@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+     frontend:
+      container_name: frontend
+      image: frontend
+      build: 
+        context: .
+        dockerfile: ./Dockerfile
+      ports:
+        - 7777:8080
+      # volumes:
+      #   - "./client/app:/home/vue/app"
+      working_dir: /home/vue/app
+      command: "npm run serve"
